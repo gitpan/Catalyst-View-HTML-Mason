@@ -1,6 +1,6 @@
 package Catalyst::View::HTML::Mason;
 BEGIN {
-  $Catalyst::View::HTML::Mason::VERSION = '0.01';
+  $Catalyst::View::HTML::Mason::VERSION = '0.02';
 }
 # ABSTRACT: HTML::Mason rendering for Catalyst
 
@@ -252,7 +252,7 @@ Catalyst::View::HTML::Mason - HTML::Mason rendering for Catalyst
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

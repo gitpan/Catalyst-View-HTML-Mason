@@ -16,6 +16,7 @@ meta-spec:
 name: Catalyst-View-HTML-Mason
 requires:
   Catalyst: 5.8000_01
+  Catalyst::Action::RenderView: 0.14
   Data::Visitor: 0
   HTML::Mason: 0
   Moose: 0
@@ -24,4 +25,4 @@ requires:
   Test::More: 0.88
   Try::Tiny: 0
   namespace::autoclean: 0
-version: 0.01
+version: 0.02

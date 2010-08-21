@@ -21,6 +21,7 @@ my %WriteMakefileArgs = (
   'NAME' => 'Catalyst::View::HTML::Mason',
   'PREREQ_PM' => {
     'Catalyst' => '5.8000_01',
+    'Catalyst::Action::RenderView' => '0.14',
     'Data::Visitor' => '0',
     'HTML::Mason' => '0',
     'Moose' => '0',
@@ -30,7 +31,7 @@ my %WriteMakefileArgs = (
     'Try::Tiny' => '0',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '0.01',
+  'VERSION' => '0.02',
   'test' => {
     'TESTS' => 't/*.t'
   }
