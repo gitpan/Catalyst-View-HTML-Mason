@@ -1,5 +1,7 @@
+Changes
 LICENSE
 MANIFEST
+META.json
 META.yml
 Makefile.PL
 README
@@ -9,6 +11,7 @@ lib/Catalyst/View/HTML/Mason.pm
 t/basic.t
 t/encoding.t
 t/exceptions.t
+t/helper.t
 t/lib/TestApp.pm
 t/lib/TestApp/Controller/Root.pm
 t/lib/TestApp/View/Global.pm
@@ -28,5 +31,7 @@ t/lib/TestAppErrors/Controller/Root.pm
 t/lib/TestAppErrors/View/Mason.pm
 t/lib/TestAppErrors/View/PathClass.pm
 t/lib/TestAppErrors/root/index
+t/release-eol.t
+t/release-no-tabs.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t

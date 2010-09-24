@@ -1,6 +1,9 @@
 package Catalyst::View::HTML::Mason;
 BEGIN {
-  $Catalyst::View::HTML::Mason::VERSION = '0.02';
+  $Catalyst::View::HTML::Mason::AUTHORITY = 'cpan:FLORA';
+}
+BEGIN {
+  $Catalyst::View::HTML::Mason::VERSION = '0.10';
 }
 # ABSTRACT: HTML::Mason rendering for Catalyst
 
@@ -147,6 +150,7 @@ sub _build_interp {
     return $self->interp_class->new( $v->visit(%args) );
 }
 
+
 sub render {
     my ($self, $ctx, $comp, $args) = @_;
     my $output = '';
@@ -163,7 +167,7 @@ sub render {
 
     try {
         $self->interp->make_request(
-            comp => $self->fetch_comp($comp),
+            comp => $self->_fetch_comp($comp),
             args => [$args ? %{ $args } : %{ $ctx->stash }],
             out_method => \$output,
         )->exec;
@@ -184,7 +188,7 @@ sub process {
     $ctx->response->body($output);
 }
 
-sub fetch_comp {
+sub _fetch_comp {
     my ($self, $comp) = @_;
     my $method;
 
@@ -243,16 +247,15 @@ __PACKAGE__->meta->make_immutable;
 
 1;
 
+
 __END__
 =pod
+
+=encoding utf-8
 
 =head1 NAME
 
 Catalyst::View::HTML::Mason - HTML::Mason rendering for Catalyst
-
-=head1 VERSION
-
-version 0.02
 
 =head1 SYNOPSIS
 
@@ -286,27 +289,15 @@ compatibility.
 
 The mason interpreter instance responsible for rendering templates.
 
-=cut
-
-=pod
-
 =head2 interp_class
 
 The class the C<interp> instance is constructed from. Defaults to
 C<HTML::Mason::Interp>.
 
-=cut
-
-=pod
-
 =head2 interp_args
 
 Arguments to be passed to the construction of C<interp>. Defaults to an empty
 hash reference.
-
-=cut
-
-=pod
 
 =head2 template_extension
 
@@ -314,18 +305,10 @@ File extension to be appended to every component file. By default it's only
 appended if no explicit component file has been provided in
 C<< $ctx->stash->{template} >>.
 
-=cut
-
-=pod
-
 =head2 always_append_template_extension
 
 If this is set to a true value, C<template_extension> will also be appended to
 component paths provided in C<< $ctx->stash->{template} >>.
-
-=cut
-
-=pod
 
 =head2 encoding
 
@@ -333,10 +316,6 @@ Encode Mason output with the given encoding.  Can be a string encoding
 name (which will be resolved using Encode::find_encoding()), or an
 Encode::Encoding object.  See L<Encode::Supported> for a list of
 encodings.
-
-=cut
-
-=pod
 
 =head2 globals
 
@@ -356,11 +335,40 @@ To export the context as $c, one would set globals => ['$c'] and make
 sure to set $c->stash->{c} = $c on each request, such as in an C<auto>
 in the root controller.
 
+=head1 METHODS
+
+=head2 render($ctx, $component, \%args)
+
+Renders the given component and returns its output.
+
+A hash of template variables may be provided in C<$args>. If C<$args> isn't
+given, template variables will be taken from C<< $ctx->stash >>.
+
+=head1 A NOTE ABOUT DHANDLERS
+
+Note that this view does not support automatic dispatching to Mason
+dhandlers.  Dhandlers can still be used, but they must be referred to
+explicitly like any other component.
+
+=for Pod::Coverage BUILD
+
 =head1 AUTHORS
 
+=over 4
+
+=item *
+
 Florian Ragwitz <rafl@debian.org>
+
+=item *
+
 Sebastian Willert <willert@cpan.org>
+
+=item *
+
 Robert Buels <rbuels@cpan.org>
+
+=back
 
 =head1 COPYRIGHT AND LICENSE
 

@@ -1,9 +1,9 @@
 
 
 This archive contains the distribution Catalyst-View-HTML-Mason,
-version 0.02:
+version 0.10:
 
-  Next-generation Mason view for Catalyst
+  HTML::Mason rendering for Catalyst
 
 This software is copyright (c) 2010 by Florian Ragwitz.
 

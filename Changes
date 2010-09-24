@@ -1,0 +1,16 @@
+Revision history for Catalyst-View-HTML-Mason
+
+0.10      2010-09-23 18:27:39 PST8PDT
+
+ * Fixed helper class (rbuels)
+ * Added docs for render method (rafl)
+ * Miscellaneous doc cleanup (rafl)
+
+0.02     Aug 20, 2010
+
+ * Added missing dep on Catalyst::Action::RenderView (rbuels)
+
+0.01     Aug 18, 2010
+
+ * First version, released on an unsuspecting world (rafl)
+
