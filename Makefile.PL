@@ -16,6 +16,7 @@ my %WriteMakefileArgs = (
     'Catalyst' => '0',
     'Catalyst::Action::RenderView' => '0',
     'Catalyst::Controller' => '0',
+    'Catalyst::Helper' => '0',
     'Catalyst::Test' => '0',
     'File::Temp' => '0',
     'FindBin' => '0',
@@ -44,7 +45,7 @@ my %WriteMakefileArgs = (
     'Try::Tiny' => '0',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '0.10',
+  'VERSION' => '0.11',
   'test' => {
     'TESTS' => 't/*.t'
   }

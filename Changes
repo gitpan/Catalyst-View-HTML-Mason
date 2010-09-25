@@ -1,5 +1,9 @@
 Revision history for Catalyst-View-HTML-Mason
 
+0.11      2010-09-24 19:39:49 PST8PDT
+
+ * add missing build dep on Catalyst::Helper
+
 0.10      2010-09-23 18:27:39 PST8PDT
 
  * Fixed helper class (rbuels)
