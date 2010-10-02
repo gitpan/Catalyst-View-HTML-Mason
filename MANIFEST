@@ -11,6 +11,7 @@ lib/Catalyst/View/HTML/Mason.pm
 t/basic.t
 t/encoding.t
 t/exceptions.t
+t/globals.t
 t/helper.t
 t/lib/TestApp.pm
 t/lib/TestApp/Controller/Root.pm
@@ -31,6 +32,15 @@ t/lib/TestAppErrors/Controller/Root.pm
 t/lib/TestAppErrors/View/Mason.pm
 t/lib/TestAppErrors/View/PathClass.pm
 t/lib/TestAppErrors/root/index
+t/lib/TestAppGlobals.pm
+t/lib/TestAppGlobals/Controller/Root.pm
+t/lib/TestAppGlobals/View/Global.pm
+t/lib/TestAppGlobals/View/Mason.pm
+t/lib/TestAppGlobals/View/PathClass.pm
+t/lib/TestAppGlobals/root/enc/utf8
+t/lib/TestAppGlobals/root/globals
+t/lib/TestAppGlobals/root/index
+t/lib/TestAppGlobals/root/xpackage_globals
 t/release-eol.t
 t/release-no-tabs.t
 t/release-pod-coverage.t

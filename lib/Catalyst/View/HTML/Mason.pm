@@ -3,7 +3,7 @@ BEGIN {
   $Catalyst::View::HTML::Mason::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $Catalyst::View::HTML::Mason::VERSION = '0.11';
+  $Catalyst::View::HTML::Mason::VERSION = '0.15';
 }
 # ABSTRACT: HTML::Mason rendering for Catalyst
 
@@ -102,6 +102,7 @@ has always_append_template_extension => (
 
     my $tc = subtype as ArrayRef[$glob_spec];
     coerce $tc, from ArrayRef, via { [map { $glob_spec->coerce($_) } @{ $_ } ]};
+    coerce $tc, from Str, via { [ $glob_spec->coerce( $_ ) ] };
 
     has globals => (
         is      => 'ro',
@@ -323,7 +324,11 @@ Arrayref of string names to export into each rendered component.  Off by default
 
 Example:
 
-  globals => [qw[ $foo %bar ]]
+  globals => [ '$foo', '%bar' ]
+
+  #or
+
+  globals => '$baz',
 
 Would export $foo and %bar to every Mason component as globals using
 identically-named values in the stash, similar to:
@@ -331,9 +336,9 @@ identically-named values in the stash, similar to:
    our $foo = $c->stash->{foo};
    our %bar = %{ $c->stash->{bar} };
 
-To export the context as $c, one would set globals => ['$c'] and make
-sure to set $c->stash->{c} = $c on each request, such as in an C<auto>
-in the root controller.
+To export just the context as $c, one would set globals => '$c' and
+make sure to set $c->stash->{c} = $c on each request, such as in an
+C<auto> in the root controller.
 
 =head1 METHODS
 

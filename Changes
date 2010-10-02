@@ -1,5 +1,9 @@
 Revision history for Catalyst-View-HTML-Mason
 
+0.15      2010-10-01 17:23:44 PST8PDT
+
+ * fixed handling of globals attr when it is just a single string
+
 0.11      2010-09-24 19:39:49 PST8PDT
 
  * add missing build dep on Catalyst::Helper

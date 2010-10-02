@@ -45,7 +45,7 @@ my %WriteMakefileArgs = (
     'Try::Tiny' => '0',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '0.11',
+  'VERSION' => '0.15',
   'test' => {
     'TESTS' => 't/*.t'
   }
