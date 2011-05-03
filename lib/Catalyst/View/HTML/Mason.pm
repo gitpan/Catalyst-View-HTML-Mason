@@ -3,7 +3,7 @@ BEGIN {
   $Catalyst::View::HTML::Mason::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $Catalyst::View::HTML::Mason::VERSION = '0.15';
+  $Catalyst::View::HTML::Mason::VERSION = '0.16';
 }
 # ABSTRACT: HTML::Mason rendering for Catalyst
 
@@ -377,7 +377,7 @@ Robert Buels <rbuels@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2010 by Florian Ragwitz.
+This software is copyright (c) 2011 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
