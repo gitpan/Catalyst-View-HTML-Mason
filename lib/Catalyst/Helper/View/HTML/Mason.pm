@@ -3,7 +3,7 @@ BEGIN {
   $Catalyst::Helper::View::HTML::Mason::AUTHORITY = 'cpan:FLORA';
 }
 BEGIN {
-  $Catalyst::Helper::View::HTML::Mason::VERSION = '0.16';
+  $Catalyst::Helper::View::HTML::Mason::VERSION = '0.17';
 }
 # ABSTRACT: Helper for L<Catalyst::View::HTML::Mason> views
 
