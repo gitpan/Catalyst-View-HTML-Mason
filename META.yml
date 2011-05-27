@@ -5,11 +5,11 @@ author:
   - 'Sebastian Willert <willert@cpan.org>'
   - 'Robert Buels <rbuels@cpan.org>'
 build_requires:
-  Capture::Tiny: 0
+  Capture::Tiny: 0.10
   Catalyst: 0
   Catalyst::Action::RenderView: 0
   Catalyst::Controller: 0
-  Catalyst::Helper: 0
+  Catalyst::Helper: 1.33
   Catalyst::Test: 0
   File::Temp: 0
   FindBin: 0
@@ -42,7 +42,7 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Catalyst-View-HTML-Mason
   homepage: http://search.cpan.org/dist/Catalyst-View-HTML-Mason
   repository: git://github.com/rafl/catalyst-view-html-mason.git
-version: 0.17
+version: 0.18
 x_Dist_Zilla:
   plugins:
     -

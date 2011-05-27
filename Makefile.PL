@@ -12,11 +12,11 @@ my %WriteMakefileArgs = (
   'ABSTRACT' => 'HTML::Mason rendering for Catalyst',
   'AUTHOR' => 'Florian Ragwitz <rafl@debian.org>, Sebastian Willert <willert@cpan.org>, Robert Buels <rbuels@cpan.org>',
   'BUILD_REQUIRES' => {
-    'Capture::Tiny' => '0',
+    'Capture::Tiny' => '0.10',
     'Catalyst' => '0',
     'Catalyst::Action::RenderView' => '0',
     'Catalyst::Controller' => '0',
-    'Catalyst::Helper' => '0',
+    'Catalyst::Helper' => '1.33',
     'Catalyst::Test' => '0',
     'File::Temp' => '0',
     'FindBin' => '0',
@@ -45,7 +45,7 @@ my %WriteMakefileArgs = (
     'Try::Tiny' => '0',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '0.17',
+  'VERSION' => '0.18',
   'test' => {
     'TESTS' => 't/*.t'
   }
