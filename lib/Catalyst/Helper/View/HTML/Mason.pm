@@ -1,12 +1,7 @@
 package Catalyst::Helper::View::HTML::Mason;
-BEGIN {
-  $Catalyst::Helper::View::HTML::Mason::AUTHORITY = 'cpan:FLORA';
-}
-BEGIN {
-  $Catalyst::Helper::View::HTML::Mason::VERSION = '0.18';
-}
+our $AUTHORITY = 'cpan:FLORA';
 # ABSTRACT: Helper for L<Catalyst::View::HTML::Mason> views
-
+$Catalyst::Helper::View::HTML::Mason::VERSION = '0.19';
 use strict;
 use warnings;
 
@@ -21,11 +16,9 @@ sub mk_compclass {
 
 1;
 
-
-
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -63,13 +56,12 @@ Robert Buels <rbuels@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Florian Ragwitz.
+This software is copyright (c) 2015 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
 
 __DATA__
   package [% class %];

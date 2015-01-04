@@ -1,18 +1,14 @@
 package Catalyst::View::HTML::Mason;
-BEGIN {
-  $Catalyst::View::HTML::Mason::AUTHORITY = 'cpan:FLORA';
-}
-BEGIN {
-  $Catalyst::View::HTML::Mason::VERSION = '0.18';
-}
+our $AUTHORITY = 'cpan:FLORA';
 # ABSTRACT: HTML::Mason rendering for Catalyst
-
+$Catalyst::View::HTML::Mason::VERSION = '0.19';
 use Moose;
 use Try::Tiny;
 use MooseX::Types::Moose qw/ArrayRef HashRef ClassName Str Bool Object CodeRef/;
 use MooseX::Types::Structured qw/Tuple/;
 use Encode::Encoding;
 use Data::Visitor::Callback;
+use Module::Runtime;
 
 use namespace::autoclean;
 
@@ -31,7 +27,7 @@ has interp => (
     use Moose::Util::TypeConstraints;
 
     my $tc = subtype as ClassName;
-    coerce $tc, from Str, via { Class::MOP::load_class($_); $_ };
+  coerce $tc, from Str, via { Module::Runtime::require_module($_); $_ };
 
     has interp_class => (
         is      => 'ro',
@@ -248,11 +244,11 @@ __PACKAGE__->meta->make_immutable;
 
 1;
 
-
 __END__
+
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -317,6 +313,11 @@ Encode Mason output with the given encoding.  Can be a string encoding
 name (which will be resolved using Encode::find_encoding()), or an
 Encode::Encoding object.  See L<Encode::Supported> for a list of
 encodings.
+
+B<NOTE> Starting in L<Catalyst> v5.90080 we encode text like body
+responses as UTF8 automatically.  In some cases templates that did
+not declare an encoding previously will now need to.  In general I
+find setting this to 'UTF-8' is a forward looking approach.
 
 =head2 globals
 
@@ -387,10 +388,9 @@ Robert Buels <rbuels@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Florian Ragwitz.
+This software is copyright (c) 2015 by Florian Ragwitz.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
